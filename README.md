@@ -98,7 +98,7 @@ Die Installation kann bei langsamer Internetverbindung sehr lange dauern.
 Warte beim Schritt `Installing packages (npm)` mit Geduld ab!
 
 
-> Auf http://localhost:4200 sollte nun eine Website mit dem Text *"book-rating app is running!"* erscheinen!
+> Auf http://localhost:4200 sollte nun eine Website mit dem Text *"Hello, book-rating"* erscheinen!
 
 ![Screenshot CLI](https://assets.angular.schule/chrome_cli_welcome_ng17.png)
 
