@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule, JsonPipe } from '@angular/common';
+import { Book } from '../shared/book';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +11,23 @@ import { CommonModule, JsonPipe } from '@angular/common';
 })
 export class DashboardComponent {
 
-  books = ['Angular', 'AngularJS', 'jQuery', {}];
+  books: Book[] = [
+    {
+      isbn: '000',
+      title: 'Angular',
+      description: 'Tolles Buch',
+      rating: 5
+    }, {
+      isbn: '111',
+      title: 'AngularJS',
+      description: 'Altes Buch',
+      rating: 3
+    }, {
+      isbn: '222',
+      title: 'jQuery',
+      description: 'Total veraltetes Buch',
+      rating: 1
+    },
+  ];
 
 }
