@@ -15,6 +15,6 @@ export class BookComponent {
   book: Book | undefined; // oder Fragezeichen!
 
   constructor() {
-    console.log('Buch', this.book)
+    console.log('Buch', this.book);
   }
 }
