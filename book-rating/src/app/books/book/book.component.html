@@ -1,17 +1,16 @@
-<h2>{{ book?.title }} – {{ book?.rating }}</h2>
+<div class="card mb-4" *ngIf="book">
+  <div class="card-body bg-light">
+      <img class="img-thumbnail float-end" alt=""
+        src="https://api.angular.schule/avatar/{{ book.rating }}">
+    <div class="card-title">
+      <h2>
+        {{ book.title }}
+        <span class="badge bg-secondary">{{ book.rating }}</span>
+      </h2>
+    </div>
+    <p>{{ book.description }}</p>
 
-<p *ngIf="book">
-  {{ book.description }}
-
-
-  <!--
-    ACHTUNG: Schlechte Software!
-
-    1. Logik im Template
-    2. Seperation of Concerns verletzt
-    3. Buch mutiert (verändert)
-
-  -->
-  <button (click)="book.rating = book.rating - 1">-</button>
-  <button (click)="book.rating = book.rating + 1">+</button>
-</p>
+    <button class="btn btn-primary me-2" (click)="book.rating = book.rating - 1">-</button>
+    <button class="btn btn-primary" (click)="book.rating = book.rating + 1">+</button>
+  </div>
+</div>
