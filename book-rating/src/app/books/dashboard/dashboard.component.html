@@ -1,6 +1,6 @@
-<!-- {{ books | json  }} -->
-
-<app-book
-  *ngFor="let b of books"
-  [book]="b"
-/>
+<!-- Achtung: wenn z.B. title sich ändert, aber isbn gleich bleibt,
+     dann können wir ggf. Änderungen nicht mitbekommen
+-->
+@for (b of books; track b.isbn) {
+  <app-book [book]="b" />
+}

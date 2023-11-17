@@ -6,7 +6,7 @@ import { BookComponent } from '../book/book.component';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [JsonPipe, BookComponent, NgFor],
+  imports: [BookComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
