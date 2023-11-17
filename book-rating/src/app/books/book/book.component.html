@@ -11,7 +11,7 @@
     </div>
     <p>{{ book.description }}</p>
 
-    <button class="btn btn-primary me-2" (click)="book.rating = book.rating - 1">-</button>
-    <button class="btn btn-primary" (click)="book.rating = book.rating + 1">+</button>
+    <button class="btn btn-primary me-2" (click)="rateDown.emit(book)">-</button>
+    <button class="btn btn-primary" (click)="rateUp.emit(book)">+</button>
   </div>
 </div>

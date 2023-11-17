@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { Book } from '../shared/book';
 
@@ -10,6 +10,12 @@ import { Book } from '../shared/book';
   styleUrl: './book.component.scss'
 })
 export class BookComponent {
+
+  @Output()
+  rateUp = new EventEmitter<Book>();
+
+  @Output()
+  rateDown = new EventEmitter<Book>();
 
   @Input({ required: true })
   book: Book | undefined; // oder Fragezeichen!
