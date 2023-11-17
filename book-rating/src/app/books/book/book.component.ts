@@ -20,7 +20,11 @@ export class BookComponent {
   @Input({ required: true })
   book: Book | undefined; // oder Fragezeichen!
 
-  constructor() {
-    console.log('Buch', this.book);
+  doRateUp() {
+    this.rateUp.emit(this.book);
+  }
+
+  doRateDown() {
+    this.rateDown.emit(this.book);
   }
 }
