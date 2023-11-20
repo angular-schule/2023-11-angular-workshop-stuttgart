@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { Book } from '../shared/book';
 
 @Component({
@@ -7,7 +8,8 @@ import { Book } from '../shared/book';
   standalone: true,
   imports: [NgIf],
   templateUrl: './book.component.html',
-  styleUrl: './book.component.scss'
+  styleUrl: './book.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookComponent {
 
@@ -26,5 +28,9 @@ export class BookComponent {
 
   doRateDown() {
     this.rateDown.emit(this.book)
+  }
+
+  log() {
+    console.log('Change detection! ', +new Date())
   }
 }
