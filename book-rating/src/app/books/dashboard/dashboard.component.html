@@ -1,7 +1,4 @@
-<!-- Achtung: wenn z.B. title sich ändert, aber isbn gleich bleibt,
-     dann können wir ggf. Änderungen nicht mitbekommen
--->
-@for (b of books; track b.isbn) {
+@for (b of books; track $index) {
   <app-book
     [book]="b"
     (rateUp)="doRateUp($event)"
