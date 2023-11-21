@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { BookComponent } from '../book/book.component';
 import { Book } from '../shared/book';
@@ -60,4 +60,7 @@ export class DashboardComponent {
       .sort((a, b) => b.rating - a.rating)
   }
 
+  addBook(newBook: Book) {
+    this.books = [...this.books, newBook]
+  }
 }
