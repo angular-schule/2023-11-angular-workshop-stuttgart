@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { DashboardComponent } from './books/dashboard/dashboard.component';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,5 @@ import { DashboardComponent } from './books/dashboard/dashboard.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Book Rating';
+  title = `Book Rating (${ environment.stage })`;
 }
