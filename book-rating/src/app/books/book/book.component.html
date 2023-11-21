@@ -13,6 +13,10 @@
 
     <button [disabled]="book.rating < 2" class="btn btn-primary me-2" (click)="doRateDown()">-</button>
     <button [disabled]="book.rating > 4" class="btn btn-primary" (click)="doRateUp()">+</button>
+
+    <a [routerLink]="['/books', book.isbn]" class="btn btn-primary ms-2"
+      [attr.aria-label]="'Navigiere zum Buch mit der ISBN ' + book.isbn"
+    >Details</a>
   </div>
 </div>
 
