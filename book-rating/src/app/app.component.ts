@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { DashboardComponent } from './books/dashboard/dashboard.component';
 import { environment } from '../environments/environment';
+import { Store } from '@ngrx/store';
+import { BookActions } from './books/store/book.actions';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +15,8 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   title = `Book Rating (${ environment.stage })`;
+
+  constructor(store: Store) {
+    store.dispatch(BookActions.loadBooks())
+  }
 }
