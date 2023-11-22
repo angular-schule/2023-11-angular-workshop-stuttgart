@@ -7,7 +7,7 @@ export const selectBookState = createFeatureSelector<fromBook.State>(
 
 export const selectBooks = createSelector(
   selectBookState,
-  state => state.book
+  state => state.books
 );
 
 export const selectLoading = createSelector(

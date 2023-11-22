@@ -5,12 +5,12 @@ import { BookCreateComponent } from '../book-create/book-create.component';
 import { BookComponent } from '../book/book.component';
 import { Book } from '../shared/book';
 import { selectBooks, selectLoading } from '../store/book.selectors';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [BookComponent, BookCreateComponent, AsyncPipe, NgIf],
+  imports: [BookComponent, BookCreateComponent, AsyncPipe, NgIf, NgFor],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   // changeDetection: ChangeDetectionStrategy.OnPush

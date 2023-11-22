@@ -6,12 +6,12 @@ import { Book } from '../shared/book';
 export const bookFeatureKey = 'book';
 
 export interface State {
-  book: Book[];
+  books: Book[];
   loading: boolean
 }
 
 export const initialState: State = {
-  book: [],
+  books: [],
   loading: false
 };
 
@@ -33,7 +33,7 @@ export const reducer = createReducer(
   on(BookActions.loadBooksFailure, (state) => ({
     ...state,
     loading: false,
-    book: []
+    books: []
   })),
 );
 
