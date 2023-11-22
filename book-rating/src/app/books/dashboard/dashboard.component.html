@@ -2,12 +2,14 @@
   (create)="addBook($event)"
 />
 
-@for (b of books; track $index) {
+@for (b of books$ | async; track $index) {
   <app-book
     [book]="b"
     (rateUp)="doRateUp($event)"
     (rateDown)="doRateDown($event)"
   />
 }
+
+<h3 *ngIf="loading$ | async">Loading...</h3>
 
 <!-- <button (click)="1 + 1">Klick mich!</button> -->
