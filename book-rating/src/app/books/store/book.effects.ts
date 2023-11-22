@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, concatMap } from 'rxjs/operators';
-import { Observable, EMPTY, of } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
+import { catchError, concatMap, map } from 'rxjs/operators';
+
 import { BookActions } from './book.actions';
 
 
@@ -9,7 +10,7 @@ import { BookActions } from './book.actions';
 export class BookEffects {
 
   loadBooks$ = createEffect(() => {
-    return this.actions$.pipe(
+    return inject(Actions).pipe(
 
       ofType(BookActions.loadBooks),
       concatMap(() =>
@@ -20,7 +21,4 @@ export class BookEffects {
       )
     );
   });
-
-
-  constructor(private actions$: Actions) {}
 }
