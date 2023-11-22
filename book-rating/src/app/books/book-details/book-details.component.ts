@@ -1,7 +1,9 @@
-import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { concatMap, map, mergeMap, switchMap } from 'rxjs';
+import { catchError, map, of, switchMap } from 'rxjs';
+
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
@@ -17,7 +19,11 @@ export class BookDetailsComponent {
 
   book$ = inject(ActivatedRoute).paramMap.pipe(
     map(paramMap => paramMap.get('isbn') || ''),
-    switchMap(isbn => this.bookStore.getSingleBook(isbn))
+    switchMap(isbn => this.bookStore.getSingleBook(isbn).pipe(
+      catchError((err: HttpErrorResponse) => of({
+        title: 'FEHLER',
+        description: err.message
+      }))
+    ))
   );
-
 }
